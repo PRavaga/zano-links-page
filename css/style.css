@@ -309,13 +309,15 @@ h6 {
 .profile {
   padding: 2.5rem 0;
 }
+.profile__items span{
+  display: block;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
 .profile__header:not(:last-child) {
   margin-bottom: 1.875rem;
 }
 .profile__items:not(:last-child) {
-  margin-bottom: 1.25rem;
-}
-.profile__item:not(:last-child) {
   margin-bottom: 1.25rem;
 }
 
@@ -326,7 +328,6 @@ h6 {
   width: 6.25rem;
   height: 6.25rem;
   margin: 0 auto;
-  border-radius: 50%;
   overflow: hidden;
 }
 .header-profile__logo-ibg:not(:last-child) {
@@ -351,14 +352,28 @@ h6 {
 }
 .header-profile__text {
   font-size: 1rem;
-  line-height: 1.3333333333;
+  line-height: 1.5;
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .buttons-profile {
   display: flex;
-  justify-content: center;
-  column-gap: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  
 }
+.buttons-profile_full-width .buttons-profile__button {
+  flex: 1 1 auto;
+}
+.buttons-profile:not(:last-child){
+  margin-bottom: 20px;
+} 
+.buttons-profile_flex{
+  display: flex;
+}
+
 .buttons-profile__button {
   display: flex;
   justify-content: center;
@@ -366,9 +381,17 @@ h6 {
   flex: 1 1 auto;
   height: 3.5625rem;
   color: #fff;
+  padding: 0 15px;
   border-radius: 0.9375rem;
   border: 2px solid transparent;
   transition: border-color 0.3s ease 0s;
+  background-color: #3a3a3a;
+}
+.buttons-profile__button_small{
+  flex: 0 1 auto;
+}
+.buttons-profile__button._text {
+  font-size: 20px !important;
 }
 @supports (font-size: clamp( 2rem , 1.6923076923rem  +  1.5384615385vw , 2.375rem )) {
   .buttons-profile__button {
@@ -425,6 +448,9 @@ h6 {
 }
 .item-profile._light-blue {
   background-color: #2081e2;
+}
+.item-profile:not(:last-child) {
+  margin-bottom: 1.25rem;
 }
 .item-profile._purple-gradient {
   background: linear-gradient(to right, rgb(146, 11, 224), rgb(249, 78, 154));
